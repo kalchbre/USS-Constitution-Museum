@@ -1,0 +1,1418 @@
+:root {
+	box-sizing: border-box;
+	--primary: #3a6d80ff;
+	--primary-light: #5c91a3ff;
+	--primary-dark: #14293e;
+	--light-body: rgb(231, 239, 237);
+	--hover-color: #cc9556ff;
+	--hover-color-light: rgb(244, 218, 184);
+	--dark: #1c2022;
+	--light: #fff;
+	--accent1: #f3c95bff;
+	--accent2: #71132dff;
+	--header-bg: var(--light);
+	--menu-text: #003e7bff;
+	--menu-background: #657077;
+
+}
+
+*, *::after, *::before{
+	box-sizing: inherit;
+		margin: 0;
+		padding: 0;
+}
+
+/* Global Styles */
+body {
+	font-family: "josefin sans", 'helvetica', sans-serif;
+	font-size: 1rem;
+	background-color: var(--primary-dark);
+}
+
+header {
+	background: var(--header-bg);
+	padding-left: 1.5em;
+}
+
+
+footer {
+	background-image: url("assets/wood_tile_blue.png");
+	background-repeat: repeat;
+	padding: 2em 0em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "stardos stencil", sans-serif;
+	color: var(--primary-dark);
+	text-align: center;
+}
+
+h1 {
+	font-size: 3.5rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 2.5rem;
+	font-family: "merriweather", serif;
+}
+
+h4 {
+	font-family: "merriweather", serif;
+	font-size: 2rem;
+}
+
+p {
+	font-family: "merriweather", serif;
+	color: var(--primary-dark);
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+li {
+	font-family: "merriweather", serif;
+	color: var(--primary-dark);
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+a {
+	color: var(--primary);
+}
+
+a:hover {
+	color: var(--hover-color);
+}
+
+/* Footer Styles */
+
+.footer-links {
+	display: flex;
+	flex-direction: row;
+	gap: 2em;
+	margin-bottom: 1em;
+}
+
+.social-media {
+	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+.copyright {
+	font-size: 0.8rem;
+	color: var(--light);
+	margin-top: 1em;
+}
+
+.web-design-credit {
+	font-size: 0.8rem;
+	color: var(--light);
+	margin-top: 0.5em;
+}
+
+.footer-links > a, .copyright > p, .web-design-credit > p {
+	color: var(--light);
+	font-family: "stardos stencil", sans-serif;
+	font-size: 1rem;
+}
+
+.social-media > a > img {
+	width: 2em;
+	height: auto;
+	filter: brightness(0) invert(1);
+}
+
+.footer-dot {
+	display: inline-block;
+	height: 0.3rem;
+	width: 0.3rem;
+	background-color: var(--light);
+	border-radius: 5px;
+	margin: 0 0.6em 0.15em 0.6em;
+}
+
+/* Logo Section */
+
+.branding-logo {
+	font-size: 1.2rem;
+}
+
+.branding-logo > img {
+	width: 12em;
+	height: auto;
+	padding: 1em;
+}
+
+.mobile-branding-logo {
+	display: none;
+}
+
+.hours {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em;
+	padding: 1em;
+}
+
+.hours > h2 {
+	font-size: 1rem;
+	font-family: "stardos stencil", sans-serif;
+	color: var(--menu-text);
+}
+
+.hours > .hours-span {
+	display: block;
+	height: 0.20rem;
+	width: 100%;
+	background-color: var(--menu-text);
+	border-radius: 5px;
+	margin: 0 10px;
+}
+
+/* Navigation Menu Styles */
+
+.navbar{
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: end;
+	padding-right: 100px;
+}
+
+.menu{
+	font-family: "stardos stencil", sans-serif;
+	display: flex;
+	flex-direction: row;
+}
+
+.menu li {
+	list-style: none;
+	font-family: "stardos stencil", sans-serif;
+}
+
+.menu li a {
+	display: block;
+	text-decoration: none;
+	color: var(--menu-text);
+	padding: 1em 1.5em;
+	font-size: 1.2rem;
+}
+
+/* Submenu Styles */
+
+.has-dropdown{
+	position: relative;
+}
+
+.submenu {
+	position: absolute;
+	top: 100%;
+	display:none;
+	left: 0;
+	background-color: var(--menu-background);
+	white-space: nowrap;
+	padding: 1.5em 0;
+	width: 17em;
+	text-wrap: wrap;
+	z-index: 1000;	
+}
+
+.child-submenu {
+	position: relative;
+	top: 100%;
+	display:none;
+	left: 0;
+	background-color: var(--menu-background);
+	white-space: nowrap;
+	padding: 1.5em 0;
+	width: 17em;
+	text-wrap: wrap;
+	z-index: 1000;
+}
+
+.submenu > li > a {
+	padding: 0.8em 1.5em;
+	color: var(--light)
+}
+
+.submenu > li > .child-submenu > li > a {
+	padding: 0.8em 1.5em;
+	color: var(--light)
+}
+
+.menu > li:hover>a, .submenu > li:hover > a, .submenu > li > .child-submenu > li:hover >a {
+	background-color: var(--primary-light);
+	color: var(--hover-color-light)
+}
+
+.menu > li:hover > a{
+	background-color: var(--menu-background);
+}
+
+/* Nav Menu Arrows and Ham Menu */
+
+.arrow{
+	width: 0.5em;
+	height: 0.5em;
+	display: inline-block;
+	vertical-align: middle;
+	border-left: 0.15em solid currentColor;
+	border-bottom: 0.15em solid currentColor;
+	transform: rotate(-45deg);
+	margin-top: -.25em;
+	transition: transform 0.3s;
+}
+
+.arrow.open{
+	transform: rotate(225deg);
+	transition: transform 0.3s;
+}
+
+.hamburger {
+	display: none;
+	height: 40px;
+	width: 40px;
+	margin-top: 5px;
+	margin-left: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.hamburger span {
+    height: 5px;
+    width: 100%;
+	margin: 0;
+    background-color: var(--menu-text);
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.hamburger span:nth-child(1) {
+	top: 25%;
+}
+
+.hamburger span:nth-child(3) {
+	top: 75%;
+}
+
+.hamburger.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Decorative Page Elements */
+
+.top-bar {
+	background-image: url("assets/wood_tile_blue.png");
+	height: 4.5em;
+	width: 100%;
+	background-repeat: repeat;
+}
+
+.body-head {
+	background-color: var(--accent2);
+	width: 100%;
+	height: 1em;
+}
+
+.bottom-margin {
+	height: 5em;
+	width: 100%;
+}
+
+/* Structural Elements */
+
+.flex-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 90%;
+	background-color: var(--light);
+}
+
+.admission-and-policies {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5em 10em;
+	width: 100%;
+}
+
+.internal-page-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+/* Hero Specific Elements */
+
+.hero-section {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.hero-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 5%;
+	background-color: rgba(255, 255, 255, 0.33);
+}
+
+.hero-overlay > h1, .hero-overlay > p {
+	color: var(--primary-dark);
+	font-family: "stardos stencil", sans-serif;
+	font-size: 3.5rem;
+	text-align: center;
+}
+
+.anchor-divider {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.anchor {
+	fill: var(--accent2);
+	width: 3.5em;
+	height: 3.5em;
+}
+
+.hero-image {
+	width: 100%;
+}
+
+.scroll-arrow-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1em;
+}
+
+.scroll-arrow {
+	width: 3.5em;
+	height: auto;
+	transform: rotate(90deg);
+	fill: var(--accent2);
+	cursor: pointer;
+	 filter: drop-shadow(1px 1px 1px var(--primary-dark));
+}
+
+.scroll-arrow:hover {
+	fill: var(--hover-color);
+}
+
+/* Divider Spans */
+
+.divider {
+	display: block;
+	height: 0.35rem;
+	background-color: var(--accent2);
+	margin: 0.1em auto 0 auto;
+	border-radius: 5px;
+}
+
+.container > .divider {
+	width: 10%;
+}
+
+.anchor-divider > .divider {
+	width: 10%;
+	margin: 1em;
+}
+
+.welcome-section > .divider {
+	width: 25%;
+}
+
+.slide-show > .divider {
+	width: 10%;
+}
+
+.internal-page-header > .divider{
+	width: 15%;
+	margin-bottom: 1em;
+}
+
+.admissions-text-box > .divider {
+	width: 33%;
+}
+
+/* Home Page Specific Elements */
+
+.welcome-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 55%;
+	justify-self: center;
+	margin: 4em auto;
+}
+
+.welcome-section > p {
+	margin-top: 1em;
+	line-height: 1.6;
+	text-indent: 20px;
+	text-align: center;
+}
+
+.info-section, .events-section {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 4em;
+}
+
+.events-section {
+	margin-top: 2em;
+}
+
+.info-1, .info-2, .info-3, .info-4, .events-1, .events-2, .events-3{
+	padding: 1em 1em;
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0em 1em;
+}
+
+.info-1, .events-1 {
+	order: 1;
+}
+
+.info-2, .events-2 {
+	order: 2;
+}
+
+.info-3, .events-3 {
+	order: 3;
+}
+
+.info-4 {
+	order: 4;
+	display: none;
+}
+
+h3 > a, h4 > a {
+	text-decoration: none;
+	color: var(--primary-dark);
+}
+
+h3 > a:hover, h4 > a:hover {
+	color: var(--hover-color);
+}
+
+h3 > a.hovered, h4 > a.hovered {
+	color: var(--hover-color);
+}
+
+/* Internal Page Specific Elements */
+
+.internal-page-header > h1 {
+	margin-top: 2em;
+}
+
+.internal-page-header > p {
+	font-size: 1.2rem;
+	text-align: center;
+	margin-bottom: 2em;
+	color: var(--primary-dark);
+	width: 35%;
+}
+
+.admissions-text-box {
+	order:1;
+	width: 100%;
+	padding: 0em 3em;
+	margin-right: 0;
+}
+
+.admissions-text-box > p {
+	text-indent: 20px;
+	margin-top: 1.5em;
+
+}
+
+.admissions-text-box > ul {
+	margin-top: 1em;
+	padding-left: 1.5em;
+}
+
+.admissions-text-box > ul > li {
+	margin-top: 0.5em;
+	line-height: 1.4;
+}
+
+.admissions-text-box > .has-dropdown > a {
+	cursor: pointer;
+	text-align: center;
+	font-family: "merriweather", serif;
+	color: var(--primary-dark);
+	font-size: 1.2rem;
+	line-height: 1.6;
+	text-decoration: none;
+	margin: 1.5em 0;
+}
+
+.admissions-image {
+	order:2;
+	width: 40vw;
+	height: auto;
+	padding: 0em 3em;
+	max-width: 800px;
+
+}
+
+/* Home Page Slide Show */
+
+.flex-container-slideshow {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	align-items: center;
+	position: relative;
+	margin: 2em 0 4em 0;
+}
+
+.flex-container-slideshow > h3 {
+	margin-bottom: 0.5em;
+	font-family: "merriweather", serif;
+	font-size: 1.8rem;
+}
+
+.slideshow-container {
+  	max-width: 750px;
+  	position: relative;
+ 	margin: auto;
+	height: 500px;
+	width: 75%;
+}
+
+.slideshow-container > h3 {
+	text-align: center;
+	font-family: "stardos stencil", sans-serif;
+	font-size: 2rem;
+	color: var(--primary-dark);
+	margin-bottom: 10px;
+}
+
+.slideshow-container > p {
+	text-align: center;
+	font-family: "merriweather", serif;
+	font-size: 1.3rem;
+	color: var(--primary-dark);
+	margin-top: 10px;
+}
+
+.exhibit-slide {
+	position: absolute;
+	max-width: 750px;
+	max-height: 500px;
+}
+
+.exhibit-slide img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+.caption-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* semi-transparent overlay */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* hidden by default */
+    transition: opacity 0.2s ease-in-out; /* smooth fade */
+}
+
+.caption-overlay > p {
+	padding: 20px;
+	font-size: 1.2rem;
+	text-align: center;
+	color: var(--light);
+	margin: 0em 1em;
+	text-indent: 20px;
+}
+
+.exhibit-slide:hover .caption-overlay {
+    opacity: 1; /* show overlay on hover */
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--accent2);
+  padding: 1rem;
+  width: 5em;
+  height: auto;
+  filter: drop-shadow(1px 1px 1px var(--primary-dark));
+}
+
+.prev {
+	transform: rotate(-180deg);
+	left: -7rem;
+}
+
+.next {
+  	right: -7rem;
+}
+
+.prev:hover, .next:hover {
+	fill: var(--hover-color);
+}
+
+.dot-div {
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--accent2);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+	 background-color: var(--hover-color);
+}
+.dot.active {
+	 background-color: var(--hover-color);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Ways to Save Menu */
+
+.admissions-text-box > .has-dropdown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.admissions-text-box > .has-dropdown > .submenu {
+	width: 100%;
+}
+
+.admissions-text-box > .has-dropdown > .submenu > li {
+	list-style: none;
+	font-family: "merriweather", serif;
+	color: var(--light);
+	padding: 1.1em 4em;
+	font-size: 1.2rem;
+
+}
+
+/* Info and Event Captions */
+
+.image-hover-container {
+    position: relative;
+    width: fit-content; 
+}
+
+.image-hover-container > img {
+    display: block;
+    width: 100%;
+    height: auto;
+	max-width: 500px;
+}
+
+.image-hover-caption {
+    position: absolute;
+    bottom: 0;          
+    left: 0;
+    width: 100%;     
+    background: var(--primary-dark);
+    color: white;
+    padding: 0.8em 1em;
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none; 
+}
+
+.image-hover-caption p {
+	font-family: "merriweather", serif;
+    text-align: center;
+	color: var(--light);
+	font-size: 1rem;
+}
+
+.image-hover-container:hover .image-hover-caption {
+    opacity: 1;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1800px) {
+	.hours {
+		display: none;
+	}
+	.admissions-text-box, .admissions-image {
+		padding: 0em 2em;
+	}
+
+	.internal-page-header > p {
+		width: 33%;
+	}
+
+	.admissions-and-policies {
+		padding: 1.5em 8em;
+	}
+
+}
+@media screen and (max-width: 1600px) {
+
+	.branding-logo > img {
+		width: 10em;
+		padding: 0.75em;
+
+	}
+
+	.menu > li > a {
+		font-size: 1.1rem;
+		padding: 1em 1.25em;
+	}
+
+	.submenu {
+		width: 15em;
+	}
+
+	.submenu > li > a {
+		font-size: 1.1rem;
+		padding: 0.8em 1.25em;
+	}
+
+	.child-submenu {
+		width: 15em;
+	}
+
+	.child-submenu > li > a {
+		font-size: 1.1rem;
+		padding: 0.8em 1.25em;
+	}
+
+	.scroll-arrow-container {
+		display: none;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	h4 {
+		font-size: 1.8rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+	}
+
+	.hero-overlay > h1, .hero-overlay > p {
+		font-size: 3rem;
+	}
+
+	.anchor {
+		width: 3em;
+		height: 3em;
+	}
+
+	.image-hover-caption > p {
+		font-size: 0.9rem;
+	}
+
+	.admissions-text-box > h2 {
+		font-size: 2rem;
+	}
+
+	.admissions-text-box > p, .admissions-text-box > .has-dropdown > a, .admissions-text-box > ul > li {
+		font-size: 1.1rem;
+	}
+
+	.admissions-text-box > .has-dropdown > .submenu > li {
+		font-size: 1.1rem;
+	}
+
+	.flex-container-slideshow > h3 {
+		font-size: 1.5rem;
+	}
+
+	.admissions-text-box > .has-dropdown > .submenu {
+		font-size: 1rem;
+		max-height: 80vh;
+		overflow-y: auto;
+	}
+
+	.admission-and-policies {
+		padding: 1.5em 5em;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.branding-logo > img {
+		width: 9em;
+		padding: 0.5em;
+
+	}	
+	
+	.menu > li > a {
+		font-size: 1rem;
+		padding: 1em 1.25em;
+	}
+
+	.submenu {
+		width: 13em;
+	}
+
+	.submenu > li > a {
+		font-size: 1rem;
+		padding: 0.8em 1.25em;
+	}
+
+	.child-submenu {
+		width: 13em;
+	}
+
+	.child-submenu > li > a {
+		font-size: 1rem;
+		padding: 0.8em 1.25em;
+	}
+
+	.internal-page-header > p {
+		width: 40%;
+	}
+
+	.admission-and-policies {
+		padding: 1.5em 4em;
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	.branding-logo > img {
+		width: 8em;
+		padding: 0.5em;
+
+	}
+	
+	.navbar {
+		padding-right: 60px;
+	}
+
+
+	.menu > li > a {
+		font-size: 0.9rem;
+		padding: 1em 0.75em;
+	}
+
+	.submenu {
+		width: 12em;
+	}
+
+	.submenu > li > a {
+		font-size: 0.9rem;
+		padding: 0.8em 1em;
+	}
+
+	.child-submenu {
+		width: 12em;
+	}
+
+	.child-submenu > li > a {
+		font-size: 0.9rem;
+		padding: 0.8em 1em;
+	}
+
+	h1 {
+		font-size: 2.3rem;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+	}
+
+	h3 {
+		font-size: 1.6rem;
+	}
+
+	h4 {
+		font-size: 1.4rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	.hero-overlay > h1, .hero-overlay > p {
+		font-size: 2.5rem;
+	}
+
+	.anchor {
+		width: 2.5em;
+		height: 2.5em;
+	}
+
+	.flex-container-slideshow > h3 {
+		font-size: 1.3rem;
+	}
+
+	.image-hover-caption > p {
+		font-size: 0.8rem;
+	}
+
+	.prev, .next {
+		width: 4em;
+	}
+
+	.prev {
+		left: -5rem;
+	}
+
+	.next {
+		right: -5rem;
+	}
+
+	.internal-page-header > p {
+		width: 50%;
+	}
+
+	.admission-and-policies {
+		padding: 1.5em 10em;
+	}
+
+	.admissions-text-box > .divider {
+		width: 25%;
+	}
+
+	.admissions-text-box > p {
+		text-align: center;
+	}
+
+	.admissions-text-box > ul {
+		text-align: center;
+		justify-content: center;
+		list-style: none;
+	}
+
+	.admissions-image {
+	display: none;
+  }
+
+	.admissions-text-box > h2 {
+		font-size: 1.8rem;
+	}
+
+	.admissions-text-box > p, .admissions-text-box > .has-dropdown > a, .admissions-text-box > ul > li {
+		font-size: 1rem;
+	}
+
+	.admissions-text-box > .has-dropdown > .submenu > li {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 992px) {
+
+	header {
+		position: relative;
+		padding: 1.5em 2em;
+		height: 50px;
+	}
+	.branding-logo {
+		display: none;
+	}
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-branding-logo {
+	display: block;
+	width: 15em;
+	justify-self: center;
+	margin: 2em 0 2em 0;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+  }
+
+  .menu {
+	flex-direction: column;
+	width: 100vw;
+	position: absolute;
+	background: var(--light);
+	top: 25px;
+	left: -35px;
+	right: 0;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	z-index: 1000;
+
+  }
+
+  .submenu {
+	position: static;
+	width: 100%;
+  }
+
+  .child-submenu {
+	width: 100%;
+  }
+
+  .menu > li > a {
+	font-size: 1.5rem;
+	color: var(--dark);
+  }
+
+  .submenu > li > a {
+	font-size: 1.5rem;
+  }
+
+  .child-submenu > li > a {
+	font-size: 1.5rem;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .menu > li {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .welcome-section {
+	width: 80%;
+  }
+
+  .info-section, .events-section {
+	flex-direction: column;
+  }
+
+  	.image-hover-caption {
+		opacity: 1;
+		position: static;
+		max-width: 500px;
+	}
+
+  .internal-page-header > h1{
+	margin-top: 0.5em;
+  }
+
+  .admission-and-policies {
+	padding: 1.5em 5em;
+  }
+
+  .admissions-text-box > .has-dropdown {
+	flex-direction: column;
+	align-items: center;
+  }
+  .admissions-text-box > .has-dropdown > .submenu {
+	width: 100%;
+	position: static;
+}
+}
+@media only screen and (max-width: 768px) {
+	.hero-overlay {
+		display:none;
+	}
+
+	.slide-show {
+		display: none;
+	}
+
+	.divider {
+		display: none;
+	}
+
+	.anchor {
+		display: none;
+	}
+
+	.info-4 {
+		display: flex;
+	}
+
+	.internal-page-header > p {
+		width: 70%;
+	}
+
+	.admission-and-policies {
+		padding: 1.5em 1.2em;
+	}
+}
+
+/* Upcoming Events Page Style source: https://codepen.io/xmark/pen/WQaXdv */
+.calendar-wrapper {
+  width:100%;
+  max-width: 1200px;
+  margin:0 auto;
+  padding:2em;
+  border:1px solid;
+  border-radius:5px;
+  
+}
+table {
+  clear:both;
+  width:100%;
+  border:1px solid;
+  border-radius:3px;
+  border-collapse:collapse;
+}
+td {
+  height:48px;
+  text-align:center;
+  vertical-align:middle;
+  border-right:1px solid;
+  border-top:1px solid;
+  width:calc(100% / 7);
+}
+
+td.today {
+  font-weight:700;
+  font-size:1.5em;
+}
+
+.cal-header {
+    font-family: "merriweather", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #71132dff;
+    padding: 10px 0;
+}
+
+thead td {
+  border:none;
+  font-size:1.5em;
+}
+#btnPrev {
+  float:left;
+  margin-bottom:20px;
+  font-family:"merriweather", serif;;
+  padding-right:4px;
+}
+#btnNext {
+  float:right;
+  margin-bottom:20px;
+  font-family:"merriweather", serif;
+  padding-left:4px;
+}
+#btnPrev, #btnNext {
+  background:transparent;
+  border:none;
+  outline:none;
+  font-size:1em;
+  cursor:pointer;
+  font-family:"merriweather", serif;
+  text-transform:uppercase;
+  transition:all 0.3s ease;
+  color:#71132dff;
+  font-weight:bold;
+}
+td {
+  position: relative;
+  cursor: pointer;
+}
+
+td .popup {
+  display: none;
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #5c91a3ff;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: normal;
+  font-size: 0.85em;
+  z-index: 10;
+  width: max-content;
+  max-width: 150px;
+  text-align: center;
+}
+
+td .popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+td:hover .popup {
+  display: block;
+}
+
+td.event-day {
+  background-color: rgb(244, 218, 184);
+  border: 2px solid black;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Quick Links Page Formatting */
+.item1 {
+  flex: 1;
+  position: relative;
+}
+
+.item1 h2 {
+ text-align: center;
+}
+
+.item1 h2 a {
+   color: black;
+}
+
+.item4 {
+  display: flex;
+  flex: 1;
+  place-items: center;
+  position: relative;
+}
+
+.item4 img {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.item5 {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  position: relative;
+}
+
+.item5::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("ussc_framed.png");
+  background-size: cover;
+  background-position: center center;
+  filter: opacity(25%);
+}
+
+.item5-text {
+  position: relative;
+}
+
+.item5-text a {
+  color: black;
+  text-align: center;
+}
+
+
+/* About Page Formatting */
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+p.ridge {border-style: ridge;}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_three_columns */
+
+a:link {
+  text-decoration: none;
+    color:#24753b;
+}
+
